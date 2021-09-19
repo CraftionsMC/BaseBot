@@ -41,7 +41,7 @@ class HelpCommand extends ICommand {
                 }
             }
 
-            if(canUse){
+            if (canUse) {
                 config.fields.push({
                     name: process.env.COMMAND_PREFIX + c.name,
                     inline: true,

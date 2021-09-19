@@ -11,6 +11,7 @@ const {CommandRegistry} = require("./commands/CommandRegistry");
 const {ICommand} = require("./commands/ICommand");
 const {Logger} = require("./util/Logger");
 const {HelpCommand} = require("./commands/default/help");
+const {InfoCommand} = require("./commands/default/info");
 
 class BaseBot {
 
@@ -25,6 +26,8 @@ class BaseBot {
             new MessageCreateEvent();
 
             new HelpCommand();
+
+            new InfoCommand();
 
             readyCallback();
         })
