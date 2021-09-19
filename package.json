@@ -1,0 +1,19 @@
+{
+  "name": "@craftions/basebot",
+  "version": "2.0.0",
+  "description": "A basic Discord Bot",
+  "main": "src/index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/CraftionsMC/BaseBot.git"
+  },
+  "author": "Ben Siebert",
+  "license": "GPL-3.0-only",
+  "bugs": {
+    "url": "https://github.com/CraftionsMC/BaseBot/issues"
+  },
+  "homepage": "https://github.com/CraftionsMC/BaseBot#readme"
+}
