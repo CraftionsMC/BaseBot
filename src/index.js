@@ -12,6 +12,9 @@ const {ICommand} = require("./commands/ICommand");
 const {Logger} = require("./util/Logger");
 const {HelpCommand} = require("./commands/default/help");
 const {InfoCommand} = require("./commands/default/info");
+const {PluginLoader} = require("./plugins/PluginLoader");
+
+const pluginLoader = new PluginLoader(process.env.PLUGINS);
 
 class BaseBot {
 
@@ -22,6 +25,10 @@ class BaseBot {
 
             console.log("Powered by BaseBot by Craftions <https://craftions.net>")
             Logger.log("Logged in as " + Client.client.user.tag)
+
+            Logger.log("Loading Plugins...")
+
+            pluginLoader.loadPlugins()
 
             new MessageCreateEvent();
 
@@ -49,4 +56,4 @@ function exitHandler() {
     process.exit();
 }
 
-module.exports = {BaseBot, CommandRegistry, ICommand, Client, Logger}
+module.exports = {BaseBot, CommandRegistry, ICommand, Client, Logger, pluginLoader}
