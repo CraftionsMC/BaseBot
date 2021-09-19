@@ -5,7 +5,6 @@
 
 const {Client} = require("../Client");
 const {CommandRegistry} = require("../commands/CommandRegistry");
-const {MessageEmbed} = require("discord.js");
 
 class MessageCreateEvent {
 

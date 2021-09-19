@@ -10,6 +10,7 @@ const {MessageCreateEvent} = require("./events/MessageCreateEvent");
 const {CommandRegistry} = require("./commands/CommandRegistry");
 const {ICommand} = require("./commands/ICommand");
 const {Logger} = require("./util/Logger");
+const {HelpCommand} = require("./commands/default/help");
 
 class BaseBot {
 
@@ -18,9 +19,13 @@ class BaseBot {
 
         Client.client.on('ready', () => {
 
+            console.log("Powered by BaseBot by Craftions <https://craftions.net>")
             Logger.log("Logged in as " + Client.client.user.tag)
 
             new MessageCreateEvent();
+
+            new HelpCommand();
+
             readyCallback();
         })
     }
