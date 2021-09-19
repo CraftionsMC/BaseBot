@@ -13,8 +13,14 @@ const {Logger} = require("./util/Logger");
 const {HelpCommand} = require("./commands/default/help");
 const {InfoCommand} = require("./commands/default/info");
 const {PluginLoader} = require("./plugins/PluginLoader");
+const path = require("path");
+const fs = require("fs");
 
-const pluginLoader = new PluginLoader(process.env.PLUGINS);
+if(!fs.existsSync(path.join(__dirname, "..", "plugins"))){
+    fs.mkdirSync(path.join(__dirname, "..", "plugins"))
+}
+
+const pluginLoader = new PluginLoader(path.join(__dirname, "..", "plugins"));
 
 class BaseBot {
 
@@ -28,13 +34,13 @@ class BaseBot {
 
             Logger.log("Loading Plugins...")
 
-            pluginLoader.loadPlugins()
-
             new MessageCreateEvent();
 
             new HelpCommand();
 
             new InfoCommand();
+
+            pluginLoader.loadPlugins()
 
             readyCallback();
         })
