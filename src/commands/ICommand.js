@@ -3,8 +3,8 @@
  * @copyright (c) 2018-2021 Ben Siebert. All rights reserved.
  */
 
-import {CommandExecutor} from "./CommandExecutor";
-import {CommandRegistry} from "./CommandRegistry";
+
+const {CommandRegistry} = require("./CommandRegistry");
 
 class ICommand {
 
@@ -17,7 +17,9 @@ class ICommand {
     }
 
     run(msg) {
-        
+
     }
 
 }
+
+module.exports = {ICommand}

@@ -7,9 +7,11 @@ require('dotenv').config();
 
 const {Client} = require('./client')
 const {MessageCreateEvent} = require("./events/MessageCreateEvent");
+const {EchoCommand} = require("./commands/default/EchoCommand");
 
 Client.create();
 
 Client.client.on('ready', () => {
     new MessageCreateEvent();
+    new EchoCommand();
 })
