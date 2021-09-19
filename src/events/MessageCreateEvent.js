@@ -3,7 +3,7 @@
  * @copyright (c) 2018-2021 Ben Siebert. All rights reserved.
  */
 
-const {Client} = require("../client");
+const {Client} = require("../Client");
 const {CommandRegistry} = require("../commands/CommandRegistry");
 const {MessageEmbed} = require("discord.js");
 
